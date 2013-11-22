@@ -7,8 +7,8 @@ defmodule Anagrams.Dictionary do
 
   def load(from_word_list) when is_list(from_word_list) do
     from_word_list
-    |> Enum.map(&{&1, signature(&1)})
-    |> Enum.reduce(HashDict.new, &add_word_to_dictionary/2)
+    |> Anagrams.PMap.pmap(&signature/1)
+    |> Enum.reduce(HashDict.new, &add_word/2)
   end
 
   def lookup(dictionary, word) do
@@ -16,13 +16,14 @@ defmodule Anagrams.Dictionary do
   end
 
   def signature(word) do
-    word
-    |> String.to_char_list!
-    |> Enum.sort
-    |> String.from_char_list!
+    result = word
+             |> String.to_char_list!
+             |> Enum.sort
+             |> String.from_char_list!
+    { result, word }                         
   end
 
-  def add_word_to_dictionary({word, signature}, dictionary) do
+  def add_word({ signature, word}, dictionary) do
     entry = Dict.get(dictionary, signature, [])
     Dict.put(dictionary, signature, [ word | entry ])
   end
