@@ -8,7 +8,7 @@ defmodule DictionaryTest do
 
   test "adding a word to a dictionary that doesn't have the signature creates a new entry" do
     dict = HashDict.new [ { "dgo", ["dog"] } ]
-    dict = add_word_to_dictionary({"cat", "act"}, dict) 
+    dict = add_word_to_dictionary("cat", dict) 
     assert Dict.has_key?(dict, "dgo")
     assert Dict.has_key?(dict, "act")
     assert Dict.get(dict, "act") == [ "cat" ]
@@ -16,7 +16,7 @@ defmodule DictionaryTest do
 
   test "adding a word to a dictionary that does have the signature adds to the entry" do
     dict = HashDict.new [ { "act", ["tac"] } ]
-    dict = add_word_to_dictionary({"cat", "act"}, dict) 
+    dict = add_word_to_dictionary("cat", dict) 
     assert Dict.has_key?(dict, "act")
     assert Dict.get(dict, "act") == [ "cat", "tac" ]
   end
