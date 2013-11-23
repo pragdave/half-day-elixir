@@ -4,6 +4,7 @@ puts to
 raise "Don't run from the git dir" if to == GIT_DIR
 Dir.chdir(GIT_DIR) do
   system("git pull --all")
+  system("git checkout master")
   branches = `git branch`.split(/\n/).map {|s| s.sub(/^\*?\s+/, '')}
   branches.each do |branch|
     dest = File.join(to, branch)
