@@ -1,0 +1,11 @@
+defmodule Asserts do
+  defmacro assert(expression) do
+    IO.inspect expression
+  end
+end
+
+defmodule CodeUnderTest do
+  include Asserts
+
+  assert 1 == 2
+end
