@@ -15,8 +15,6 @@ defmodule Anagrams.Mixfile do
 
   defp deps do
     [
-      { :cowboy, github: "extend/cowboy" },
-      { :dynamo, github: "elixir-lang/dynamo" }
     ]
   end
 end
