@@ -20,10 +20,10 @@ defmodule ApplicationRouter do
   end
 
   def anagram_list(conn, word, list) do
-    conn = conn
-           .assign(:word, word)
-           .assign(:anagrams, list)
-    render conn, "anagrams.html"
+    conn
+    .assign(:word, word)
+    .assign(:anagrams, list)
+    |> render"anagrams.html"
   end
 
 end
