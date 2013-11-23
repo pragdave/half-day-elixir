@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Anagrams of <%= word %></title>
+  </head>
+  <body>
+    <p>
+      Anagrams of <%= word %> include <%= anagrams %>.
+    </p>
+  </body>
+</html>

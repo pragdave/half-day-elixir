@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Anagrams of <%= @word %></title>
+  </head>
+  <body>
+    <h3>Anagrams of <%= @word %></h3>
+    <p>
+       Anagrams of <%= @word %> include
+    </p>
+    <ul>
+       <%= lc anagram inlist @anagrams do %>
+       <li><%= anagram %></li>
+       <% end %>
+    </ul>
+  </body>
+</html>

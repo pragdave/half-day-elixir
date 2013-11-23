@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Dav's Anagram Server</title>
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+</head>
+<body>
+  <h3>Welcome to Dave's Anagram Server</h3>
+
+  <p>
+    Give me a url such as 
+    <a href="retsina">http://localhost:4000/retsina</a>
+    and I'll give you the anagrams of <em>retsina</em>.
+  </p>
+</body>
+</html>
