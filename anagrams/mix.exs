@@ -5,6 +5,7 @@ defmodule Anagrams.Mixfile do
     [ app: :anagrams,
       version: "0.0.1",
       elixir: "~> 0.11.2-dev",
+      escript_main_module: Anagrams.CLI,
       deps: deps ]
   end
 
