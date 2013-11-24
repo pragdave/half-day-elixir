@@ -1,4 +1,4 @@
-GIT_DIR = "/Users/dave/Play/half-day-elixir-tutorial"
+GIT_DIR = __dir__
 to = Dir.pwd
 puts to
 raise "Don't run from the git dir" if to == GIT_DIR
