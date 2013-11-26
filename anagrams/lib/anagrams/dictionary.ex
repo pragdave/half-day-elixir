@@ -1,4 +1,5 @@
 defmodule Anagrams.Dictionary do
+
   def load(from_file) when is_binary(from_file) do
     File.stream!(from_file)
     |> Enum.map(&String.strip/1)
