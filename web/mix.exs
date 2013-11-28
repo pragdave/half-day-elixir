@@ -10,14 +10,14 @@ defmodule Web.Mixfile do
       deps: deps ]
   end
 
-  # Configuration for the OTP application
   def application do
     [ applications: [:cowboy, :dynamo, :anagrams],
       mod: { Web, [] } ]
   end
 
   defp deps do
-    [ { :cowboy, github: "extend/cowboy" },
+    [ 
+      { :cowboy, github: "extend/cowboy" },
       { :dynamo, "~> 0.1.0-dev", github: "elixir-lang/dynamo" },
       { :anagrams, path: "../anagrams" }
     ]
