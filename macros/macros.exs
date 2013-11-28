@@ -9,12 +9,31 @@ defmodule Asserts do
     quote do
       unless unquote(left) == unquote(right) do
         IO.puts """
-        Expected #{unquote(left_text)} (#{unquote(left)}) to equal #{unquote(right_text)} (#{unquote(right)})
+        Expected #{unquote(left_text)} (#{unquote(left)}) 
+        to equal #{unquote(right_text)} (#{unquote(right)})
         """
       end
     end
   end
 end
+
+defmodule Example do
+  defmacro log(expr) do
+    source = Macro.to_string(expr)
+    quote do
+      IO.puts "#{unquote(source)} = #{unquote(expr)}"
+      unquote(expr)
+    end
+  end
+end
+
+defmodule UseExample do
+  import Example
+
+  IO.puts "Result = #{log 1 + 2}"
+
+end
+
 
 defmodule CodeUnderTest do
   import Asserts
