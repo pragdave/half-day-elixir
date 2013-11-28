@@ -1,9 +1,0 @@
-{application,anagrams,
-             [{registered,[]},
-              {description,"anagrams"},
-              {mod,{'Elixir.Anagrams',[]}},
-              {vsn,"0.0.1"},
-              {modules,['Elixir.Anagrams','Elixir.Anagrams.CLI',
-                        'Elixir.Anagrams.Dictionary','Elixir.Anagrams.Server',
-                        'Elixir.Anagrams.Supervisor']},
-              {applications,[kernel,stdlib,elixir]}]}.
